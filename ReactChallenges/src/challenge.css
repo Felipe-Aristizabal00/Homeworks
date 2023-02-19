@@ -8,3 +8,21 @@
 .botones{
     margin: 1em;
 }
+
+.categorias{
+  column-count: 2;
+  column-fill: auto;
+  column-gap: auto;
+  width: 100%;
+  height: auto;
+
+}
+
+.card {
+  height: flex;
+  width: flex;
+  display: center;
+  margin-bottom: 20px;
+  padding: auto;
+}
+
