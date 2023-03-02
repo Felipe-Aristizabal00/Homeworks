@@ -1,4 +1,4 @@
-//Challenge 6
+//Challenge 8
 
 import React from "react";
 import "./App.css";
@@ -6,8 +6,9 @@ import { useCounter } from "./hooks/useCounter";
 import { useFetch } from "./hooks/useFetch";
 
 export const MultipleCustomHooks = () => {
-	const { counter, increment, decrement, reset } = useCounter(1);
-	const { data, isLoading, hasError } = useFetch(`https://api.breakingbadquotes.xyz/v1/quotes/${counter}`);
+	const { counter, increment, decrement, reset } = useCounter(0);
+	const url = `https://api.breakingbadquotes.xyz/v1/quotes/${counter}`;
+	const { data, isLoading, hasError } = useFetch(url);
 
 	return (
 		<>
@@ -27,10 +28,12 @@ export const MultipleCustomHooks = () => {
 			{isLoading ? (
 				<div>Loading...</div>
 			) : (
-				<blockquote>
-					<p>{data[0]?.quote}</p>
-					<footer> {data[0]?.author} </footer>
-				</blockquote>
+				data.map((item) => (
+					<blockquote>
+						<p>{item.quote}</p>
+						<footer> {item.author} </footer>
+					</blockquote>
+				))
 			)}
 		</>
 	);

@@ -1,29 +1,35 @@
+//Challenge7
+
 import { useEffect, useState } from "react";
-import getData from "../components/getData";
 
 export const useFetch = (url) => {
 	const [state, setState] = useState({
-		data: null,
+		data: [],
 		isLoading: true,
 		hasError: null,
 	});
 
 	const getFetch = async () => {
-		const api = await getData(url);
-		const data = await api.json;
+		setState({
+			data: [],
+			isLoading: true,
+			hasError: null,
+		});
+		const api = await fetch(url);
+		const data = await api.json();
 
 		setState({
 			data,
 			isLoading: false,
 			hasError: null,
 		});
+		return state;
 	};
 
 	useEffect(() => {
 		getFetch();
+		console.log(url);
 	}, [url]);
 
-	return {
-		...state,
-	};
+	return state;
 };
