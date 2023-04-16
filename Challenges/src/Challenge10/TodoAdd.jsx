@@ -21,7 +21,7 @@ export const TodoAdd = (props) => {
 			<hr />
 			<h4> Agregar TODO </h4>
 			<form onSubmit={agregarTODO}>
-				<input onChange={(event) => setTODOtitle(event.target.value)}></input>
+				<input value={TODOtitle} onChange={(event) => setTODOtitle(event.target.value)}></input>
 				<button type="submit"> Agregar </button>
 			</form>
 		</div>
