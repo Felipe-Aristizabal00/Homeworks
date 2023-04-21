@@ -3,12 +3,14 @@ import { TodoList } from "./TodoList";
 import { TodoAdd } from "./TodoAdd";
 import { useTODO } from "../Hooks/useTODO";
 import "../App.css";
+import SideBar from "../components/SideBar";
 
 export const TodoApp = () => {
 	const { todos, deleteTodo, doneTodo, handleNewTodo, countTodos, countPendingTodos } = useTODO();
 
 	return (
-		<>
+		<div>
+			<SideBar />
 			<h1>
 				TodoApp: {countTodos()}, <small> Pendientes: {countPendingTodos()} </small>
 			</h1>
@@ -21,6 +23,6 @@ export const TodoApp = () => {
 					<TodoAdd handleNewTodo={handleNewTodo} />
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
