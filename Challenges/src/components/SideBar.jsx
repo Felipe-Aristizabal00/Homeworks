@@ -10,6 +10,9 @@ const SideBar = () => {
 			<Link className="Links" to="/register">
 				Firebase
 			</Link>
+			<Link className="Links" to="/upload">
+				Uplaod
+			</Link>
 			<Link className="Links" to="/">
 				Home
 			</Link>
