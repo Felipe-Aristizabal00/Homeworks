@@ -11,7 +11,10 @@ const SideBar = () => {
 				Firebase
 			</Link>
 			<Link className="Links" to="/upload">
-				Uplaod
+				Upload
+			</Link>
+			<Link className="Links" to="/crud">
+				CRUD
 			</Link>
 			<Link className="Links" to="/">
 				Home
