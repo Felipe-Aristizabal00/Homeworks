@@ -1,11 +1,11 @@
 import React from "react";
-import { TodoList } from "./TodoList";
-import { TodoAdd } from "./TodoAdd";
+import { TodoList } from "../components/TodoList";
+import { TodoAdd } from "../components/TodoAdd";
 import { useTODO } from "../Hooks/useTODO";
 import "../App.css";
 import SideBar from "../components/SideBar";
 
-export const TodoApp = () => {
+const TodoApp = () => {
 	const { todos, deleteTodo, doneTodo, handleNewTodo, countTodos, countPendingTodos } = useTODO();
 
 	return (
@@ -26,3 +26,5 @@ export const TodoApp = () => {
 		</div>
 	);
 };
+
+export default TodoApp;
