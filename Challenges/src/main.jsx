@@ -7,17 +7,23 @@ import Home from "./Challenge13/Home";
 import Login from "./Challenge13/Login";
 import TodoApp from "./Challenge13/TodoApp";
 import PrivateRoute from "./components/PrivateRoute";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
+import Counter from "./Challenge13/Counter";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<AuthProvider>
-		<BrowserRouter>
-			<Routes>
-				<Route path="/login" element={<Login />} />
-				<Route path="/todoapp" element={<TodoApp />} />
-				<Route element={<PrivateRoute children={<Home />} />}>
-					<Route path="/" element={<Home />} />
-				</Route>
-			</Routes>
-		</BrowserRouter>
+		<Provider store={store}>
+			<BrowserRouter>
+				<Routes>
+					<Route path="/login" element={<Login />} />
+					<Route path="/todoapp" element={<TodoApp />} />
+					<Route path="/counterapp" element={<Counter />} />
+					<Route element={<PrivateRoute children={<Home />} />}>
+						<Route path="/" element={<Home />} />
+					</Route>
+				</Routes>
+			</BrowserRouter>
+		</Provider>
 	</AuthProvider>
 );
